@@ -63,9 +63,9 @@ public class First {
                 System.out.println("         Выберите способ вывода:\n" +
                         "1 - В консоль\n" +
                         "2 - В файл\n" +
-                        "0 - Выход из программы");
-                Scanner in = new Scanner(System.in);
-                String k = in.nextLine();
+                        "0 - Выход из программы");                  //Здесть выбирается метод вывода данных
+                Scanner in = new Scanner(System.in);                //Также как и в конструкторе класса Menu
+                String k = in.nextLine();                          //Работает NumberFormatException
                 switch (Integer.parseInt(k)) {
                     case 1: {
                         show(n);

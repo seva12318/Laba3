@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class Menu {
     public Menu(){
         String s;
-        Scanner in = new Scanner(System.in);
-        while (true) {
+        Scanner in = new Scanner(System.in);                        //В этом методе выбирается задание, которое
+        while (true) {                                              //Пользователь хочет выполнить
             System.out.println("             Main menu\n1 - Для выполнения задания № 1" + "\n" +
                     "2 - Для выполнения задания № 2 и 3" + "\n" +
                     "0 - Выход из программы");
-            s = in.nextLine();
-            try {
-                chooseTask(Integer.parseInt(s));
+            s = in.nextLine();                                      //Так как я объявил переменную String, то при
+            try {                                                   //Переводе буквы в цифру, произойдёт ошибка
+                chooseTask(Integer.parseInt(s));                   //Поэтому я селал NumberFormatException Exception
             } catch (Exception NumberFormatException) {
                 System.err.println("ОШИБКА:Вы ввели неизвистный символ..." +
                         "Введите 1, 2 или 0 соответсвенно действую" +
@@ -21,7 +21,7 @@ public class Menu {
         }
     }
 
-    private static void chooseTask(int i) {
+    private static void chooseTask(int i){                  //В этом методе выбиирается  способ ввода
         String s;
         Scanner in = new Scanner(System.in);
         boolean b=true;
@@ -85,9 +85,9 @@ public class Menu {
     }
 
     private static boolean chooseActionCaseFirst(String s, boolean b) {
-        try {
-            if(Integer.parseInt(s)==1){ task1(); b=false;}
-            else if(Integer.parseInt(s)==2){  File.readerFirst(); b=false;}
+        try {                                                               //В этом методе обрабатываются данны введённые в
+            if(Integer.parseInt(s)==1){ task1(); b=false;}                  //В chooseTask, также аналагично методу Menu
+            else if(Integer.parseInt(s)==2){  File.readerFirst(); b=false;} //Здесть есть NumberFormatException
             else if(Integer.parseInt(s)==9) b=false;
             else if(Integer.parseInt(s)==0) System.exit(0);
             else System.err.println("ОШИБКА:Вы ввели цифру, которая не прелагается для " +
@@ -101,9 +101,9 @@ public class Menu {
     }
 
     private static boolean chooseActionCaseSecond(String s, boolean b) {
-        try {
-            if(Integer.parseInt(s)==1){ task2(); b=false;}
-            else if(Integer.parseInt(s)==2){  File.readerSecond(); b=false;}
+        try {                                                           //В этом методе обрабатываются данны введённые в
+            if(Integer.parseInt(s)==1){ task2(); b=false;}                 //В chooseTask, также аналагично методу Menu
+            else if(Integer.parseInt(s)==2){  File.readerSecond(); b=false;}//Здесть есть NumberFormatException
             else if(Integer.parseInt(s)==9) b=false;
             else if(Integer.parseInt(s)==0) System.exit(0);
             else System.err.println("ОШИБКА:Вы ввели цифру, которая не прелагается для " +
